@@ -37,8 +37,9 @@ for (var i = 0; i < 100; i++)
 
 Console.WriteLine(" Random numbers big to small");
 
+ 
 
-QuickSort(numbers, 0, numbers.Length - 1);
+QuickSort(numbers, 0, numbers.Length - 1); 
 
     static void QuickSort(int[] array, int low, int high)
     {

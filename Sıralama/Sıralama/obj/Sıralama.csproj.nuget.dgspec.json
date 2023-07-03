@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\talha\\OneDrive\\Masaüstü\\C# form\\Sıralama\\Sıralama\\Sıralama.csproj": {}
+    "C:\\Users\\talha\\OneDrive\\Masaüstü\\Github\\S-ralam\\staj\\Sıralama\\Sıralama\\Sıralama.csproj": {}
   },
   "projects": {
-    "C:\\Users\\talha\\OneDrive\\Masaüstü\\C# form\\Sıralama\\Sıralama\\Sıralama.csproj": {
+    "C:\\Users\\talha\\OneDrive\\Masaüstü\\Github\\S-ralam\\staj\\Sıralama\\Sıralama\\Sıralama.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\talha\\OneDrive\\Masaüstü\\C# form\\Sıralama\\Sıralama\\Sıralama.csproj",
+        "projectUniqueName": "C:\\Users\\talha\\OneDrive\\Masaüstü\\Github\\S-ralam\\staj\\Sıralama\\Sıralama\\Sıralama.csproj",
         "projectName": "Sıralama",
-        "projectPath": "C:\\Users\\talha\\OneDrive\\Masaüstü\\C# form\\Sıralama\\Sıralama\\Sıralama.csproj",
+        "projectPath": "C:\\Users\\talha\\OneDrive\\Masaüstü\\Github\\S-ralam\\staj\\Sıralama\\Sıralama\\Sıralama.csproj",
         "packagesPath": "C:\\Users\\talha\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\talha\\OneDrive\\Masaüstü\\C# form\\Sıralama\\Sıralama\\obj\\",
+        "outputPath": "C:\\Users\\talha\\OneDrive\\Masaüstü\\Github\\S-ralam\\staj\\Sıralama\\Sıralama\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\talha\\AppData\\Roaming\\NuGet\\NuGet.Config",
