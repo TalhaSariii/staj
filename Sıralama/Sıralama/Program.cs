@@ -1,6 +1,7 @@
 ﻿
 int numb1;
 int numb2 = 1;
+
 while (numb2!= 0)    
     {
    
@@ -11,12 +12,13 @@ while (numb2!= 0)
     int temporary;
     int rnd;
     List<int> generatedNumber = new List<int>();
+    Console.WriteLine("Enter the numbers you want to list.");
     for (var i = 0; i < numb1; i++)
     {
-        rnd = random.Next(0, 100);
 
-        numbers[i] = rnd;
-        generatedNumber.Add(rnd);
+      
+        Console.Write("Enter the " + (i+1) + " st value :");
+        numbers[i]=Convert.ToInt32(Console.ReadLine());  
 
 
 
