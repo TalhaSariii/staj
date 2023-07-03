@@ -1,45 +1,53 @@
-﻿int[] numbers = new int[100];
-Random random = new Random();
-int temporary;
-int rnd;
-List<int> generatedNumber = new List<int>();
-for (var i = 0; i < 100; i++)
-{
-    rnd =   random.Next(0, 100);
-
-    numbers[i] = rnd;
-    generatedNumber.Add(rnd);
-
-
-
-}
-for (var i = 0; i <= 100; i++)
-{
-    for (var j = i + 1; j < 100; j++)
+﻿
+int numb1;
+int numb2 = 1;
+while (numb2!= 0)    
     {
-        if (numbers[i] > numbers[j])
+   
+    Console.Write("enter the number of rows to list :");
+    numb1 = Convert.ToInt32(Console.ReadLine());
+    int[] numbers = new int[numb1];
+    Random random = new Random();
+    int temporary;
+    int rnd;
+    List<int> generatedNumber = new List<int>();
+    for (var i = 0; i < numb1; i++)
+    {
+        rnd = random.Next(0, 100);
+
+        numbers[i] = rnd;
+        generatedNumber.Add(rnd);
+
+
+
+    }
+    for (var i = 0; i <= numb1; i++)
+    {
+        for (var j = i + 1; j < numb1; j++)
         {
+            if (numbers[i] > numbers[j])
+            {
 
-            temporary = numbers[j];
-            numbers[j] = numbers[i];
-            numbers[i] = temporary;
+                temporary = numbers[j];
+                numbers[j] = numbers[i];
+                numbers[i] = temporary;
 
+            }
         }
+
+    }
+    Console.WriteLine("Random numbers small to large ");
+    for (var i = 0; i < numb1; i++)
+    {
+
+        Console.WriteLine(numbers[i]);
     }
 
-}
-Console.WriteLine("Random numbers small to large ");
-for (var i = 0; i < 100; i++)
-{
+    Console.WriteLine(" Random numbers big to small");
 
-    Console.WriteLine(numbers[i]);
-}
 
-Console.WriteLine(" Random numbers big to small");
 
- 
-
-QuickSort(numbers, 0, numbers.Length - 1); 
+    QuickSort(numbers, 0, numbers.Length - 1);
 
     static void QuickSort(int[] array, int low, int high)
     {
@@ -85,6 +93,13 @@ QuickSort(numbers, 0, numbers.Length - 1);
             Console.WriteLine(number + " ");
         }
     }
-PrintArray(numbers);
+    PrintArray(numbers);
 
-Console.ReadLine();
+    Console.WriteLine("Type 0 to exit or type any number to continue");
+     numb2 = Convert.ToInt32(Console.ReadLine());
+
+ 
+   
+}
+Environment.Exit(0);
+
