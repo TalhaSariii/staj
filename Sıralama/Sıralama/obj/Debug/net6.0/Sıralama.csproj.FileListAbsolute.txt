@@ -13,3 +13,18 @@ C:\Users\talha\OneDrive\Masaüstü\C# form\Sıralama\Sıralama\obj\Debug\net6.0\
 C:\Users\talha\OneDrive\Masaüstü\C# form\Sıralama\Sıralama\obj\Debug\net6.0\Sıralama.pdb
 C:\Users\talha\OneDrive\Masaüstü\C# form\Sıralama\Sıralama\obj\Debug\net6.0\Sıralama.genruntimeconfig.cache
 C:\Users\talha\OneDrive\Masaüstü\C# form\Sıralama\Sıralama\obj\Debug\net6.0\ref\Sıralama.dll
+C:\Users\talha\OneDrive\Masaüstü\Github\S-ralam\staj\Sıralama\Sıralama\bin\Debug\net6.0\Sıralama.exe
+C:\Users\talha\OneDrive\Masaüstü\Github\S-ralam\staj\Sıralama\Sıralama\bin\Debug\net6.0\Sıralama.deps.json
+C:\Users\talha\OneDrive\Masaüstü\Github\S-ralam\staj\Sıralama\Sıralama\bin\Debug\net6.0\Sıralama.runtimeconfig.json
+C:\Users\talha\OneDrive\Masaüstü\Github\S-ralam\staj\Sıralama\Sıralama\bin\Debug\net6.0\Sıralama.dll
+C:\Users\talha\OneDrive\Masaüstü\Github\S-ralam\staj\Sıralama\Sıralama\bin\Debug\net6.0\Sıralama.pdb
+C:\Users\talha\OneDrive\Masaüstü\Github\S-ralam\staj\Sıralama\Sıralama\obj\Debug\net6.0\Sıralama.csproj.AssemblyReference.cache
+C:\Users\talha\OneDrive\Masaüstü\Github\S-ralam\staj\Sıralama\Sıralama\obj\Debug\net6.0\Sıralama.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\talha\OneDrive\Masaüstü\Github\S-ralam\staj\Sıralama\Sıralama\obj\Debug\net6.0\Sıralama.AssemblyInfoInputs.cache
+C:\Users\talha\OneDrive\Masaüstü\Github\S-ralam\staj\Sıralama\Sıralama\obj\Debug\net6.0\Sıralama.AssemblyInfo.cs
+C:\Users\talha\OneDrive\Masaüstü\Github\S-ralam\staj\Sıralama\Sıralama\obj\Debug\net6.0\Sıralama.csproj.CoreCompileInputs.cache
+C:\Users\talha\OneDrive\Masaüstü\Github\S-ralam\staj\Sıralama\Sıralama\obj\Debug\net6.0\Sıralama.dll
+C:\Users\talha\OneDrive\Masaüstü\Github\S-ralam\staj\Sıralama\Sıralama\obj\Debug\net6.0\refint\Sıralama.dll
+C:\Users\talha\OneDrive\Masaüstü\Github\S-ralam\staj\Sıralama\Sıralama\obj\Debug\net6.0\Sıralama.pdb
+C:\Users\talha\OneDrive\Masaüstü\Github\S-ralam\staj\Sıralama\Sıralama\obj\Debug\net6.0\Sıralama.genruntimeconfig.cache
+C:\Users\talha\OneDrive\Masaüstü\Github\S-ralam\staj\Sıralama\Sıralama\obj\Debug\net6.0\ref\Sıralama.dll

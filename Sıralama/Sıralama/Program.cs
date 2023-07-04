@@ -1,90 +1,170 @@
-﻿int[] numbers = new int[100];
-Random random = new Random();
-int temporary;
-int rnd;
-List<int> generatedNumber = new List<int>();
-for (var i = 0; i < 100; i++)
+﻿using System;
+using System.Collections.Generic;
+
+class Program
 {
-    rnd =   random.Next(0, 100);
-
-    numbers[i] = rnd;
-    generatedNumber.Add(rnd);
-
-
-
-}
-for (var i = 0; i <= 100; i++)
-{
-    for (var j = i + 1; j < 100; j++)
+    static void Main()
     {
-        if (numbers[i] > numbers[j])
+
+        int sortchoice;
+        Validate(Convert.ToChar("8"));
+
+
+        Console.WriteLine("Enter order Type.\n 1: Ascending and manually \n 2: Ascending and random\n 3: Descending and manually \n 4: Descending and random\n 5: Manually list \n 6: Random list ");
+
+        sortchoice = Convert.ToInt32(Console.ReadLine());
+        if (sortchoice == 1 || sortchoice == 3 || sortchoice == 5)
+        {
+            manualNumberSorting(sortchoice);
+        }
+        else if(sortchoice == 2 || sortchoice == 4 || sortchoice == 6)
         {
 
-            temporary = numbers[j];
-            numbers[j] = numbers[i];
-            numbers[i] = temporary;
 
+            RandomNumberSorting(sortchoice);
         }
     }
 
-}
-Console.WriteLine("Random numbers small to large ");
-for (var i = 0; i < 100; i++)
-{
+    
 
-    Console.WriteLine(numbers[i]);
-}
-
-Console.WriteLine(" Random numbers big to small");
-
- 
-
-QuickSort(numbers, 0, numbers.Length - 1); 
-
-    static void QuickSort(int[] array, int low, int high)
+    static void RandomNumberSorting(int? sortOrder)
     {
-        if (low < high)
+        int numb1;
+        int numb2 = 1;
+
+        while (numb2 != 0)
         {
-            int pivotIndex = Partition(array, low, high);
+            Console.Write("Enter the number of rows to list: ");
+            numb1 = Convert.ToInt32(Console.ReadLine());
 
-            QuickSort(array, low, pivotIndex - 1);
-            QuickSort(array, pivotIndex + 1, high);
-        }
-    }
+            Console.Write("Enter the lower limit of the random number: ");
+            int rnd1 = Convert.ToInt32(Console.ReadLine());
 
-    static int Partition(int[] array, int low, int high)
-    {
-        int pivotValue = array[high];
-        int i = low - 1;
+            Console.Write("Enter the upper limit of the random number: ");
+            int rnd2 = Convert.ToInt32(Console.ReadLine());
 
-        for (int j = low; j < high; j++)
-        {
-            if (array[j] >= pivotValue)
+            int[] numbers = new int[numb1];
+            Random random = new Random();
+
+            for (var i = 0; i < numb1; i++)
             {
-                i++;
-                Swap(array, i, j);
+                int rnd = random.Next(rnd1, rnd2);
+                numbers[i] = rnd;
             }
+
+            if (sortOrder == 3)
+            {
+                Ascending(numbers);
+            }
+            else if (sortOrder == 4)
+            {
+                Descending(numbers);
+            }
+            else if (sortOrder == 6)
+            {
+                Ascending(numbers);
+                Descending(numbers);
+            }
+            else
+            {
+                return;
+            }
+
+
+            Console.WriteLine("Type 0 to exit or type any number to continue");
+            numb2 = Convert.ToInt32(Console.ReadLine());
         }
 
-        Swap(array, i + 1, high);
-
-        return i + 1;
+        Environment.Exit(0);
     }
 
-    static void Swap(int[] array, int i, int j)
-    {
-        int temp = array[i];
-        array[i] = array[j];
-        array[j] = temp;
-    }
+    
 
-    static void PrintArray(int[] array)
+    static void Ascending(int[] numbers)
     {
-        foreach (int number in array)
+
+        Array.Sort(numbers);
+
+        Console.WriteLine("Random numbers (small to large):");
+        foreach (int number in numbers)
         {
-            Console.WriteLine(number + " ");
+            Console.WriteLine(number);
         }
     }
-PrintArray(numbers);
 
-Console.ReadLine();
+    static void Descending(int[] numbers)
+    {
+        for (int i = 0; i < numbers.Length - 1; i++)
+        {
+            int maxIndex = i;
+
+            for (int j = i + 1; j < numbers.Length; j++)
+            {
+                if (numbers[j] > numbers[maxIndex])
+                {
+                    maxIndex = j;
+                }
+            }
+
+            int temp = numbers[i];
+            numbers[i] = numbers[maxIndex];
+            numbers[maxIndex] = temp;
+        }
+
+        Console.WriteLine("Random numbers (big to small):");
+        foreach (int number in numbers)
+        {
+            Console.WriteLine(number);
+        }
+
+    }
+
+
+
+    static bool Validate(char input)
+    {
+        var tryInput = input;
+        return true;
+    }
+    static void manualNumberSorting(int? sortOrder)
+    {
+        int numb1;
+        int numb2 = 1;
+        while (numb2 != 0)
+        {
+            Console.Write("Enter the number of rows to list: ");
+            numb1 = Convert.ToInt32(Console.ReadLine());
+            int[] numbers = new int[numb1];
+
+            Console.WriteLine("Enter the numbers you want to list:");
+            for (var i = 0; i < numb1; i++)
+            {
+                Console.Write("Enter the " + (i + 1) + "st value: ");
+                numbers[i] = Convert.ToInt32(Console.ReadLine());
+            }
+            if (sortOrder == 1)
+            {
+                Ascending(numbers);
+            }
+            else if (sortOrder == 2)
+            {
+                Descending(numbers);
+            }
+            else if (sortOrder == 5)
+            {
+                Ascending(numbers);
+                Descending(numbers);
+            }
+            else
+            {
+                return;
+            }
+
+            Console.WriteLine("Type 0 to exit or type any number to continue");
+            numb2 = Convert.ToInt32(Console.ReadLine());
+        }
+
+        Environment.Exit(0);
+    }
+}
+   
