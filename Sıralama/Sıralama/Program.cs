@@ -1,47 +1,102 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
+using System.Reflection.Metadata.Ecma335;
 
 class Program
 {
     static void Main()
     {
+       
+        
+        string? sortchoice;
+        bool checkInput;
 
-        int sortchoice;
-        Validate(Convert.ToChar("8"));
 
+        Console.WriteLine("Enter order Type.\n 1: Ascending and manually \n" +
+            " 2: Ascending and random\n 3: Descending and manually \n" +
+            " 4: Descending and random\n 5: Manually list \n 6: Random list ");
 
-        Console.WriteLine("Enter order Type.\n 1: Ascending and manually \n 2: Ascending and random\n 3: Descending and manually \n 4: Descending and random\n 5: Manually list \n 6: Random list ");
-
-        sortchoice = Convert.ToInt32(Console.ReadLine());
-        if (sortchoice == 1 || sortchoice == 3 || sortchoice == 5)
+        sortchoice = Console.ReadLine();
+        checkInput=Validate(sortchoice);
+        if(checkInput==true)
         {
-            manualNumberSorting(sortchoice);
+            if (sortchoice == "1" || sortchoice == "3" || sortchoice == "5")
+            {
+                manualNumberSorting(sortchoice);
+            }
+            else if (sortchoice == "2" || sortchoice == "4" || sortchoice == "6")
+            {
+
+
+                RandomNumberSorting(sortchoice);
+            }
         }
-        else if(sortchoice == 2 || sortchoice == 4 || sortchoice == 6)
+        else
         {
-
-
-            RandomNumberSorting(sortchoice);
+            Console.WriteLine("Wrong enery!!!");
+            
         }
+    
+      
     }
 
     
 
-    static void RandomNumberSorting(int? sortOrder)
+    static void RandomNumberSorting(string? sortOrder)
     {
-        int numb1;
+        Stopwatch stopwatch = new Stopwatch();
+        stopwatch.Start();
+        string ? temp;
+        int numb1=0;
         int numb2 = 1;
+        string rndtemp;
+        string rndtemp2;
+        int rnd1;
+        int rnd2;
 
         while (numb2 != 0)
         {
             Console.Write("Enter the number of rows to list: ");
-            numb1 = Convert.ToInt32(Console.ReadLine());
+            temp = Console.ReadLine();
+            if(Validate(temp))
+            {
+                numb1 = Convert.ToInt32(temp);
+            }
+            else
+            {
+                Console.WriteLine("Wrong enery!!!");
+                continue;
+            }
 
             Console.Write("Enter the lower limit of the random number: ");
-            int rnd1 = Convert.ToInt32(Console.ReadLine());
+            rndtemp = Console.ReadLine();
+            if (Validate(rndtemp))
+            {
+                rnd1 = Convert.ToInt32(rndtemp);
+            }
+            else
+            {
+                Environment.Exit(0);
+            }
+
+            rnd1 = Convert.ToInt32(rndtemp);
 
             Console.Write("Enter the upper limit of the random number: ");
-            int rnd2 = Convert.ToInt32(Console.ReadLine());
+            rndtemp2 = Console.ReadLine();
+            if (Validate(rndtemp2))
+            {
+                rnd2 = Convert.ToInt32(rndtemp2);
+            }
+            else
+            {
+                Console.WriteLine("wrong entry please enter a number");
+                continue;
+
+            }
+
+
+            rnd2 = Convert.ToInt32(rndtemp2);
 
             int[] numbers = new int[numb1];
             Random random = new Random();
@@ -52,15 +107,15 @@ class Program
                 numbers[i] = rnd;
             }
 
-            if (sortOrder == 3)
+            if (sortOrder == "2")
             {
                 Ascending(numbers);
             }
-            else if (sortOrder == 4)
+            else if (sortOrder == "4")
             {
                 Descending(numbers);
             }
-            else if (sortOrder == 6)
+            else if (sortOrder == "6")
             {
                 Ascending(numbers);
                 Descending(numbers);
@@ -69,12 +124,23 @@ class Program
             {
                 return;
             }
+            stopwatch.Stop();
+            Console.WriteLine($"Time elapsed (For): {stopwatch.Elapsed}");
 
 
             Console.WriteLine("Type 0 to exit or type any number to continue");
-            numb2 = Convert.ToInt32(Console.ReadLine());
-        }
+            temp = Console.ReadLine();
+            if (Validate(temp))
+            {
+                numb2 = Convert.ToInt32(temp);
+            }
+            else
+            {
+                Environment.Exit(0);
 
+            }
+
+        }
         Environment.Exit(0);
     }
 
@@ -121,36 +187,74 @@ class Program
 
 
 
-    static bool Validate(char input)
+    static bool Validate(string input)
     {
-        var tryInput = input;
+        var checkRange = int.TryParse(input, out var value);
+        if(checkRange == false)
+        {
+            Console.WriteLine("wrong entery!!!");
+        }
+        if (input == "")
+        { return false; }
+        foreach (char character in input)
+        {
+            if (character < '0' || character > '9')
+            {
+                return false;
+            }
+        }
+        
         return true;
     }
-    static void manualNumberSorting(int? sortOrder)
+
+    static void manualNumberSorting(string? sortOrder)
     {
+        string? temp;
         int numb1;
         int numb2 = 1;
         while (numb2 != 0)
         {
             Console.Write("Enter the number of rows to list: ");
-            numb1 = Convert.ToInt32(Console.ReadLine());
+            temp = Console.ReadLine();
+            if (Validate(temp))
+            {
+                numb1 = Convert.ToInt32(temp);
+            }
+            else
+            {
+                Console.WriteLine("wrong entry please enter a number");
+                continue;
+            }
+
+            numb1 = Convert.ToInt32(temp);
+
             int[] numbers = new int[numb1];
 
             Console.WriteLine("Enter the numbers you want to list:");
             for (var i = 0; i < numb1; i++)
             {
                 Console.Write("Enter the " + (i + 1) + "st value: ");
-                numbers[i] = Convert.ToInt32(Console.ReadLine());
+                temp = Console.ReadLine();
+                if (Validate(temp))
+                {
+                    numbers[i] = Convert.ToInt32(temp);
+                }
+                else
+                {
+                    Console.WriteLine("wrong entry please enter a number");
+                    continue;
+                }
+                
             }
-            if (sortOrder == 1)
+            if (sortOrder == "1")
             {
                 Ascending(numbers);
             }
-            else if (sortOrder == 2)
+            else if (sortOrder == "3")
             {
                 Descending(numbers);
             }
-            else if (sortOrder == 5)
+            else if (sortOrder == "5")
             {
                 Ascending(numbers);
                 Descending(numbers);
@@ -161,7 +265,18 @@ class Program
             }
 
             Console.WriteLine("Type 0 to exit or type any number to continue");
-            numb2 = Convert.ToInt32(Console.ReadLine());
+            temp = Console.ReadLine();
+            if (Validate(temp))
+            {
+                numb2 = Convert.ToInt32(temp);
+            }
+            else
+            {
+                Environment.Exit(0);
+            
+            }
+
+           
         }
 
         Environment.Exit(0);
